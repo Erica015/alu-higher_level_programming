@@ -1,0 +1,85 @@
+# Define the Patient class with attributes and methods for managing patient data
+
+class Patient:
+    def __init__(self, id, name, age, gender, admission_date, condition):
+        """
+        Initialize patient attributes.
+        :param id: int, Unique identifier for the patient.
+        :param name: str, Name of the patient.
+        :param age: int, Age of the patient.
+        :param gender: str, Gender of the patient.
+        :param admission_date: str, Admission date of the patient.
+        :param condition: str, Current medical condition of the patient.
+        """
+        self.id = id
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.admission_date = admission_date
+        self.condition = condition
+
+    def get_details(self):
+        """
+        Return a summary of the patient's details as a string.
+        """
+        return (f"Patient ID: {self.id}, Name: {self.name}, Age: {self.age}, "
+                f"Gender: {self.gender}, Admission Date: {self.admission_date}, "
+                f"Condition: {self.condition}")
+
+
+# Create a few sample patient instances and store them in a list
+patients = [
+    Patient(1, "Alice Smith", 30, "Female", "2023-09-10", "Healthy"),
+    Patient(2, "Bob Brown", 45, "Male", "2023-10-05", "Recovering from surgery"),
+    Patient(3, "Carol White", 38, "Female", "2023-09-20", "High blood pressure")
+]
+
+
+# Define a function to count the total number of patients
+def count_patients(patient_list):
+    """
+    Count and return the total number of patients.
+    :param patient_list: list, List of Patient instances.
+    :return: int, Total number of patients.
+    """
+    return len(patient_list)
+
+
+# Define a function to list all patient names
+def list_patient_names(patient_list):
+    """
+    Return a list of names of all patients.
+    :param patient_list: list, List of Patient instances.
+    :return: list of str, Names of all patients.
+    """
+    return [patient.name for patient in patient_list]
+
+
+# Optional: Define a function to print patient details by ID
+def print_patient_by_id(patient_list):
+    """
+    Prompt user for a patient ID, find and print the details of the matching patient.
+    If no patient is found, print "Patient not found."
+    :param patient_list: list, List of Patient instances.
+    """
+    try:
+        patient_id = int(input("Enter patient ID: "))
+        found = False
+        for patient in patient_list:
+            if patient.id == patient_id:
+                print(patient.get_details())
+                found = True
+                break
+        if not found:
+            print("Patient not found.")
+    except ValueError:
+        print("Invalid ID format. Please enter a number.")
+
+
+# Testing the functions
+print(f"Total number of patients: {count_patients(patients)}")
+print("List of patient names:", list_patient_names(patients))
+
+# Uncomment below to test the optional function
+# print_patient_by_id(patients)
+
