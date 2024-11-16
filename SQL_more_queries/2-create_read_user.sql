@@ -1,7 +1,8 @@
--- A script that lists all shows contained in hbtn_0d_tvshows without a genre linked.
--- Query script that lists all shows contained in hbtn_0d_tvshows without a genre linked.
-SELECT tv_shows.title, tv_show_genres.genre_id
-FROM tv_shows
-LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
-WHERE tv_show_genres.genre_id is NULL
-ORDER BY tv_shows.title;
+-- a script that creates the database hbtn_0d_2 and the user user_0d_2.
+-- user_0d_2 should have only SELECT privilege in the database hbtn_0d_2
+-- The user_0d_2 password should be set to user_0d_2_pwd
+-- If the database hbtn_0d_2 already exists, your script should not fail
+-- If the user user_0d_2 already exists, your script should not fail
+CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_pwd';
+GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost';
