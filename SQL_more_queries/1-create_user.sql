@@ -1,4 +1,4 @@
--- A script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server (in localhost).
--- Query to list all privileges 
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+-- Script that creates an user in MySQL server
+-- Query to create the user 'user_0d_1' in MySQL server
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
