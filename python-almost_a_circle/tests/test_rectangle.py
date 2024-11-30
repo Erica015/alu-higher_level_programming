@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""A unittests for models/rectangle.py.
+# test_rectangle.py
+# refer to models
+"""Defines unittests for models/rectangle.py.
 
 Unittest classes:
     TestRectangle_instantiation - line 25
