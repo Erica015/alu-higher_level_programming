@@ -1,8 +1,9 @@
 #!/usr/bin/node
-const myObject = {
-  type: 'object',
-  value: 12
-};
-console.log(myObject);
-myObject.value = 89;
-console.log(myObject);
+const argv = process.argv.slice(2);
+const message =
+  argv.length > 0
+    ? argv.length === 1
+      ? 'Argument found'
+      : 'Arguments found'
+    : 'No argument';
+console.log(message);
